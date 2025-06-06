@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 46px;
-    background-color: whitesmoke;
+    background-color: rgb(198, 241, 241);
     font-family: 'Inter', sans-serif;
     color: whitesmoke;
 }
@@ -34,28 +34,45 @@ body {
 .main-container {
     display: flex;
     height: 700px;
-
-    padding: 20px;
-    border: 2px solid red;
+    align-items: center;
+    gap: 100px;
+    
+    /* border: 2px solid red; */
 }
 /* LEFT SIDE OF CONTAINER*/
 .left-container {
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     flex: 1;
 
+    /* background-color: aqua; */
+}
+
+.inner-left-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.left-container p {
+
+
+#canvas-static-text {
     font-size: 46px;
     font-weight: 600;
-    color: cadetblue;
+    color: white;
     text-shadow: 2px 2px rgb(58, 92, 94);
 }
+#canvas-details-text {
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px rgb(58, 92, 94);
+    margin-bottom: 10px;
+}
+
 .canvas-container {
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 4px 4px 2px gray;
     display: flex;
     flex-direction: column;
 }
@@ -74,16 +91,22 @@ body {
     display: flex;
 }
 
-
 /* RIGHT SIDE OF CONTAINER*/
 .right-container {
     display: flex;
     flex: 1;
     align-items: center;
-    justify-content: center;
-    color: black;
+    justify-content: flex-start;
+    
+    /* background-color: blue;  */
+}
 
-    background-color: rgb(34, 255, 45); 
+.toolbox-container {
+    height: 600px;
+    width: 360px;
+    background-color: whitesmoke;
+    border: 2px solid gray;
+    border-radius: 20px;
 }
     
 

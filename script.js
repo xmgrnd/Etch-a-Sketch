@@ -17,8 +17,8 @@ grid.addEventListener("mouseup", (e) => {
 //creating grid, 2 loops: first for columns second for rows
 //Each box created, new event listener created (unoptimized?)
 function gridCrafter(size, pxSize) {
-    document.querySelector(".left-container p")
-        .textContent = `Canvas ${size}x${size}`;
+    document.querySelector("#canvas-details-text")
+        .textContent = `Size: ${size}x${size} Pixel size: ${pxSize}`;
     for (let i = 0; i < size; i++) {
         const newBoxContainer = document.createElement("div");
         newBoxContainer.classList.add(`grid-column`);
@@ -68,6 +68,6 @@ function setPixelSize(size) {
     return s;
 }
 
-let value = 50;
+let value = 100;
 gridCrafter(value, setPixelSize(value));
 
