@@ -33,7 +33,7 @@ body {
 /* MAIN CONTENT */
 .main-container {
     display: flex;
-    height: 630px;
+    height: 700px;
 
     padding: 20px;
     border: 2px solid red;
@@ -62,8 +62,8 @@ body {
 
 .grid-child {
     background-color: white;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 }
 
 .grid-child:hover{
