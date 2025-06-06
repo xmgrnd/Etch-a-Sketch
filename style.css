@@ -35,6 +35,7 @@ body {
     display: flex;
     height: 630px;
 
+    padding: 20px;
     border: 2px solid red;
 }
 /* LEFT SIDE OF CONTAINER*/
@@ -44,13 +45,33 @@ body {
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
+.left-container p {
+    font-size: 46px;
+    font-weight: 600;
+    color: cadetblue;
+    text-shadow: 2px 2px rgb(58, 92, 94);
+
+    border: 2px solid red;
+}
+.canvas-container {
+    border: 2px solid black;
+    display: flex;
+}
+
 
 /* RIGHT SIDE OF CONTAINER*/
 .right-container {
     display: flex;
-    background-color: rgb(34, 255, 45);
     flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: black;
+
+    background-color: rgb(34, 255, 45); 
 }
     
 
