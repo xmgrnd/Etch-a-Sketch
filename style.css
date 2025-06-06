@@ -47,18 +47,30 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
 .left-container p {
     font-size: 46px;
     font-weight: 600;
     color: cadetblue;
     text-shadow: 2px 2px rgb(58, 92, 94);
-
-    border: 2px solid red;
 }
 .canvas-container {
-    border: 2px solid black;
+    box-shadow: 2px 2px 2px gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-child {
+    background-color: white;
+    width: 5px;
+    height: 5px;
+}
+
+.grid-child:hover{
+    background-color: black;
+}
+
+.grid-column {
     display: flex;
 }
 
