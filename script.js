@@ -1,4 +1,5 @@
 const grid = document.querySelector(".canvas-container");
+const rainbowColors = ["red","orange","yellow","green","blue","violet"];
 let selectedColor = "black";
 let isActiveRubber = false;
 let isActiveRainbow = false;
@@ -89,7 +90,8 @@ function gridCrafter(size, pxSize) {
             newBox.style.height = pxSize;
             newBox.classList.add("grid-child");
             newBox.addEventListener("mouseover", (e) =>{ 
-                    if (isRightPressed) newBox.style["background-color"] = selectedColor;
+                    if (isRightPressed && isActiveRainbow) newBox.style["background-color"] = rainbowColors[Math.floor(Math.random()*6)];
+                    else if (isRightPressed) newBox.style["background-color"] = selectedColor;
                 });
             newBoxContainer.appendChild(newBox);
             console.log(`Added ${j+1} grid box.`)
