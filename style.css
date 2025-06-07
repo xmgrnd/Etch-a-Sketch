@@ -110,7 +110,7 @@ body {
 
 .toolbox-container {
     height: 600px;
-    width: 360px;
+    width: 400px;
     background-image: url(img/toolbox-bg2.jpg);
     border-radius: 30px;
     display: flex;
@@ -126,14 +126,35 @@ body {
     padding-top: 10px;
 }
 
+.toolbox-row-one {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-picker-container{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgb(214, 214, 214);
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+.pixel-text {
+    font-family: 'Jersey 15';
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: 1px 1px white;
+    color: grey;
+}
+
 .btn {
-    color: black;
-    font-weight: 600;
-    font-size: 16px;
-    text-shadow: 2px 2px white;
+    padding: 5px;
+    background-image: url(img/btn_1.jpg);
     border: none;
-    background-color: bisque;
-    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 3px grey;
 }
 
 

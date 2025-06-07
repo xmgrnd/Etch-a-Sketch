@@ -13,6 +13,10 @@ grid.addEventListener("mouseup", (e) => {
         e.preventDefault();
         isRightPressed = false;});
 
+document.querySelector("#color-apply-btn").addEventListener('click', (e) => {
+    selectedColor = document.querySelector("#color-picker-itself").value;
+});
+
 
 //creating grid, 2 loops: first for columns second for rows
 //Each box created, new event listener created (unoptimized?)
@@ -67,6 +71,8 @@ function setPixelSize(size) {
     else s = "16px";
     return s;
 }
+
+
 
 let value = 100;
 gridCrafter(value, setPixelSize(value));
