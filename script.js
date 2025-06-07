@@ -38,9 +38,19 @@ document.querySelector("#rainbow-btn").addEventListener('click', (e) => {
         selectedColor = document.querySelector("#color-picker-itself").value;
     } else {
         isActiveRainbow = true;
-        //content
     }
     toggleUpdateHandler("rainbow");
+});
+
+document.querySelector("#new-canvas-btn").addEventListener('click', (e) => {
+    const userGridSize = document.querySelector("#grid-size-value");
+    if ((userGridSize.value >= 10) && (userGridSize.value <= 100)) {
+        gridDestroyer();
+        gridCrafter(userGridSize.value, setPixelSize(userGridSize.value));
+        userGridSize.value = "";
+    } else {
+        displayPopup("Please insert number between(and including) 10 and 100.");
+    }
 });
 
 function toggleUpdateHandler(priority) {
@@ -49,14 +59,20 @@ function toggleUpdateHandler(priority) {
     if (priority == "rainbow") {
         if (isActiveRainbow) {
             toggleOn(rainbowToggle);
-            if (isActiveRainbow && isActiveRubber) toggleOff(rubberToggle);
+            if (isActiveRainbow && isActiveRubber) { 
+                toggleOff(rubberToggle);
+                isActiveRubber=false;
+            }
         } else {
             toggleOff(rainbowToggle);
         }
     } else {
         if (isActiveRubber) {
             toggleOn(rubberToggle);
-            if (isActiveRainbow && isActiveRubber) toggleOff(rainbowToggle);
+            if (isActiveRainbow && isActiveRubber) {
+                toggleOff(rainbowToggle); 
+                isActiveRainbow=false;
+            }
         } else {
             toggleOff(rubberToggle);
         }
@@ -90,7 +106,7 @@ function gridCrafter(size, pxSize) {
             newBox.style.height = pxSize;
             newBox.classList.add("grid-child");
             newBox.addEventListener("mouseover", (e) =>{ 
-                    if (isRightPressed && isActiveRainbow) newBox.style["background-color"] = rainbowColors[Math.floor(Math.random()*6)];
+                    if (isRightPressed && isActiveRainbow)  newBox.style["background-color"] = rainbowColors[Math.floor(Math.random()*6)];
                     else if (isRightPressed) newBox.style["background-color"] = selectedColor;
                 });
             newBoxContainer.appendChild(newBox);
@@ -129,8 +145,21 @@ function setPixelSize(size) {
     return s;
 }
 
+function displayPopup(message) {
+    const popupBox = document.createElement("div");
+    const popupBoxX = document.createElement("div");
+    popupBox.classList.add("custom-popup");
+    popupBoxX.classList.add("custom-popup-x");
+    popupBox.textContent = message;
+    popupBoxX.textContent = 'x';
+    popupBox.appendChild(popupBoxX);
+    document.querySelector("body").appendChild(popupBox);
+    popupBox.style.display="flex"
+    popupBoxX.addEventListener('click', (e) => {
+        popupBox.style.display = "none";
+    });
+}
 
-
+//initial webside state
 let value = 100;
 gridCrafter(value, setPixelSize(value));
-

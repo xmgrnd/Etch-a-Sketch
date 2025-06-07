@@ -13,6 +13,7 @@ body {
     background-color: rgb(198, 241, 241);
     font-family: 'Inter', sans-serif;
     color: whitesmoke;
+
 }
 
 /* HERO */
@@ -126,18 +127,13 @@ body {
     padding-top: 10px;
 }
 
-.toolbox-row-one {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-.toolbox-row-two {
+.toolbox-row {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.color-picker-container{
+.toolbox-row-container{
     display: flex;
     align-items: center;
     gap: 7px;
@@ -151,7 +147,7 @@ body {
     font-family: 'Jersey 15';
     font-size: 30px;
     font-weight: 500;
-    text-shadow: 1px 1px cadetblue;
+    text-shadow: 1px 1px black;
     color: rgb(146, 146, 146);
 }
 
@@ -177,6 +173,45 @@ body {
     color: red;
     text-shadow: 1px 1px rebeccapurple;
 }
+/* CUSTOM DISPLAY */
+.custom-popup {
+    padding: 10px;
+    width: 360px;
+    height: 100px;
+    position: fixed;
+    bottom:50%;
+    left:40%;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    border: 2px solid grey;
+    background-color: aliceblue;
+    display: none;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    box-shadow: 3px 3px 5px black;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+.custom-popup-x {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: gray;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+.custom-popup-x:hover {
+    filter: brightness(110%);
+}
+
 
 
 /* BUTTON SETTINGS */
@@ -186,7 +221,7 @@ body {
     border: none;
     border-radius: 10px;
     box-shadow: 3px 3px grey;
-
+    cursor: pointer;
     transition: 50ms;
 }
 .btn:hover{

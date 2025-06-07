@@ -6,6 +6,6 @@ A work in progress vanilla JavaScipt app for **educational purposes**!
 * Download button
 * User can change grid size
 * ~~Paint color picker~~
-* "Rainbow" paint color 
+* ~~"Rainbow" paint color~~ 
 * Favicon + title
-* Rubber tool 
+* ~~Rubber tool~~
