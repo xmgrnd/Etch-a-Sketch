@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&family=Pixelify+Sans:wght@400..700&display=swap');
 
 * {
     padding: 0px;
@@ -56,18 +56,25 @@ body {
     justify-content: center;
 }
 
+#canvas-static-text,
+#canvas-details-text,
+.toolbox-header {
+    font-family: 'Jersey 15';
+    text-shadow:    -2px 0px black,
+                    2px 0px black,
+                    0px -2px black,
+                    0px 2px black;
+}
 
 #canvas-static-text {
-    font-size: 46px;
-    font-weight: 600;
+    font-size: 64px;
+    font-weight: 200;
     color: white;
-    text-shadow: 2px 2px rgb(58, 92, 94);
 }
 #canvas-details-text {
     font-size: 30px;
     font-weight: 500;
     color: white;
-    text-shadow: 2px 2px rgb(58, 92, 94);
     margin-bottom: 10px;
 }
 
@@ -104,11 +111,30 @@ body {
 .toolbox-container {
     height: 600px;
     width: 360px;
-    background-color: whitesmoke;
-    border: 2px solid gray;
-    border-radius: 20px;
+    background-image: url(img/toolbox-bg2.jpg);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
-    
+
+.toolbox-header {
+    font-size: 56px;
+    color: white;
+    font-weight: 200;
+    padding-top: 10px;
+}
+
+.btn {
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: 2px 2px white;
+    border: none;
+    background-color: bisque;
+    padding: 30px;
+}
 
 
 /* link formatting */
