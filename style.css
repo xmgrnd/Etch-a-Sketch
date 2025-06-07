@@ -116,7 +116,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .toolbox-header {
@@ -129,6 +129,11 @@ body {
 .toolbox-row-one {
     display: flex;
     justify-content: center;
+    gap: 10px;
+}
+.toolbox-row-two {
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -149,6 +154,30 @@ body {
     text-shadow: 1px 1px cadetblue;
     color: rgb(146, 146, 146);
 }
+
+#rubber-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: yellow;
+    text-shadow: 1px 1px orange;
+}
+#rainbow-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: pink;
+    text-shadow: 1px 1px violet;
+}
+#toggle-status-rainbow {
+    color: red;
+    text-shadow: 1px 1px rebeccapurple;
+}
+#toggle-status-rubber {
+    color: red;
+    text-shadow: 1px 1px rebeccapurple;
+}
+
 
 /* BUTTON SETTINGS */
 .btn {

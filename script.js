@@ -1,5 +1,7 @@
 const grid = document.querySelector(".canvas-container");
 let selectedColor = "black";
+let isActiveRubber = false;
+let isActiveRainbow = false;
 
 grid.addEventListener('contextmenu', (e) => {
     e.preventDefault();});
@@ -14,8 +16,61 @@ grid.addEventListener("mouseup", (e) => {
         isRightPressed = false;});
 
 document.querySelector("#color-apply-btn").addEventListener('click', (e) => {
-    selectedColor = document.querySelector("#color-picker-itself").value;
+    isActiveRainbow = false;
+    isActiveRubber = false;
+    selectedColor = document.querySelector("#color-picker-itself").value;});
+
+document.querySelector("#rubber-btn").addEventListener('click', (e) => {
+    if (isActiveRubber) {
+        isActiveRubber = false;
+        selectedColor = document.querySelector("#color-picker-itself").value;
+    } else {
+        isActiveRubber = true;
+        selectedColor = 'white';
+    }
+    toggleUpdateHandler("");
 });
+
+document.querySelector("#rainbow-btn").addEventListener('click', (e) => {
+    if (isActiveRainbow) {
+        isActiveRainbow = false;
+        selectedColor = document.querySelector("#color-picker-itself").value;
+    } else {
+        isActiveRainbow = true;
+        //content
+    }
+    toggleUpdateHandler("rainbow");
+});
+
+function toggleUpdateHandler(priority) {
+    const rubberToggle = document.querySelector("#toggle-status-rubber");
+    const rainbowToggle = document.querySelector("#toggle-status-rainbow");
+    if (priority == "rainbow") {
+        if (isActiveRainbow) {
+            toggleOn(rainbowToggle);
+            if (isActiveRainbow && isActiveRubber) toggleOff(rubberToggle);
+        } else {
+            toggleOff(rainbowToggle);
+        }
+    } else {
+        if (isActiveRubber) {
+            toggleOn(rubberToggle);
+            if (isActiveRainbow && isActiveRubber) toggleOff(rainbowToggle);
+        } else {
+            toggleOff(rubberToggle);
+        }
+    }
+}
+function toggleOff(item) {
+    item.style.color = "red";
+    item.textContent = "OFF";
+    item.style["text-shadow"] = "1px 1px rebeccapurple"
+}
+function toggleOn(item){
+    item.style.color = "lime";
+    item.textContent = "ON";
+    item.style["text-shadow"] = "1px 1px limegreen"
+}
 
 
 //creating grid, 2 loops: first for columns second for rows
