@@ -136,25 +136,36 @@ body {
     display: flex;
     align-items: center;
     gap: 7px;
-    background: rgb(214, 214, 214);
+    background-image: url(img/btn_1.jpg);
     padding: 5px;
     border: 1px solid grey;
+    border-radius: 10px;
 }
 
 .pixel-text {
     font-family: 'Jersey 15';
     font-size: 30px;
     font-weight: 500;
-    text-shadow: 1px 1px white;
-    color: grey;
+    text-shadow: 1px 1px cadetblue;
+    color: rgb(146, 146, 146);
 }
 
+/* BUTTON SETTINGS */
 .btn {
     padding: 5px;
     background-image: url(img/btn_1.jpg);
     border: none;
     border-radius: 10px;
     box-shadow: 3px 3px grey;
+
+    transition: 50ms;
+}
+.btn:hover{
+    transform: scale(1.05);
+}
+.btn:active{
+    transform: translate3d(3px,3px,0);
+    box-shadow: 0px 0px grey;
 }
 
 
