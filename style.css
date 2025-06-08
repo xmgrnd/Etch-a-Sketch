@@ -165,11 +165,22 @@ body {
     color: pink;
     text-shadow: 1px 1px violet;
 }
+#dark-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(224, 224, 120);
+    text-shadow: 1px 1px rgb(53, 13, 117);
+}
 #toggle-status-rainbow {
     color: red;
     text-shadow: 1px 1px rebeccapurple;
 }
 #toggle-status-rubber {
+    color: red;
+    text-shadow: 1px 1px rebeccapurple;
+}
+#toggle-status-dark {
     color: red;
     text-shadow: 1px 1px rebeccapurple;
 }

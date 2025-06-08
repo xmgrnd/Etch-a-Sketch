@@ -3,6 +3,7 @@ const rainbowColors = ["red","orange","yellow","green","blue","violet"];
 let selectedColor = "black";
 let isActiveRubber = false;
 let isActiveRainbow = false;
+let isAcvtiveDarkening = false;
 
 grid.addEventListener('contextmenu', (e) => {
     e.preventDefault();});
