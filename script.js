@@ -29,7 +29,6 @@ document.querySelector("#rubber-btn").addEventListener('click', (e) => {
         selectedColor = document.querySelector("#color-picker-itself").value;
     } else {
         isActiveRubber = true;
-        selectedColor = 'white';
         isActiveRainbow = false;
         isAcvtiveDarkening = false;
     }
@@ -124,11 +123,20 @@ function gridCrafter(size, pxSize) {
         grid.appendChild(newBoxContainer);
         for (let j = 0; j < size; j++) {
             const newBox = document.createElement("div");
+            newBox.style["opacity"] = 1;
             newBox.style.width = pxSize;
             newBox.style.height = pxSize;
             newBox.classList.add("grid-child");
             newBox.addEventListener("mouseover", (e) =>{ 
-                    if (isRightPressed && isActiveRainbow)  newBox.style["background-color"] = rainbowColors[Math.floor(Math.random()*6)];
+                    if (isRightPressed && isActiveRainbow)  {
+                        newBox.style["background-color"] = rainbowColors[Math.floor(Math.random()*6)];
+                    }
+                    else if (isRightPressed && isAcvtiveDarkening) {
+                        newBox.style["opacity"]-=0.1;
+                    } else if (isRightPressed && isActiveRubber) {
+                        newBox.style["opacity"]=1;
+                        newBox.style["background-color"] = 'white';
+                    }
                     else if (isRightPressed) newBox.style["background-color"] = selectedColor;
                 });
             newBoxContainer.appendChild(newBox);
@@ -181,5 +189,5 @@ function displayPopup(message) {
 }
 
 //initial webside state
-let value = 100;
+let value = 10;
 gridCrafter(value, setPixelSize(value));
