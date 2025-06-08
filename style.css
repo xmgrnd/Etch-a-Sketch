@@ -112,7 +112,7 @@ body {
 .toolbox-container {
     height: 520px;
     width: 400px;
-    background-image: url(img/toolbox-bg2.jpg);
+    background-image: url(/img/toolbox-bg2.jpg);
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@ body {
     display: flex;
     align-items: center;
     gap: 7px;
-    background-image: url(img/btn_1.jpg);
+    background-image: url(/img/btn_1.jpg);
     padding: 5px;
     border: 1px solid grey;
     border-radius: 10px;
@@ -228,7 +228,7 @@ body {
 /* BUTTON SETTINGS */
 .btn {
     padding: 5px;
-    background-image: url(img/btn_1.jpg);
+    background-image: url(/img/btn_1.jpg);
     border: none;
     border-radius: 10px;
     box-shadow: 3px 3px grey;
