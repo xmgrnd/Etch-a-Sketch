@@ -20,6 +20,7 @@ grid.addEventListener("mouseup", (e) => {
 document.querySelector("#color-apply-btn").addEventListener('click', (e) => {
     isActiveRainbow = false;
     isActiveRubber = false;
+    isAcvtiveDarkening = false;
     selectedColor = document.querySelector("#color-picker-itself").value;});
 
 document.querySelector("#rubber-btn").addEventListener('click', (e) => {
@@ -29,8 +30,10 @@ document.querySelector("#rubber-btn").addEventListener('click', (e) => {
     } else {
         isActiveRubber = true;
         selectedColor = 'white';
+        isActiveRainbow = false;
+        isAcvtiveDarkening = false;
     }
-    toggleUpdateHandler("");
+    toggleUpdateHandler("rubber");
 });
 
 document.querySelector("#rainbow-btn").addEventListener('click', (e) => {
@@ -39,8 +42,22 @@ document.querySelector("#rainbow-btn").addEventListener('click', (e) => {
         selectedColor = document.querySelector("#color-picker-itself").value;
     } else {
         isActiveRainbow = true;
+        isActiveRubber = false;
+        isAcvtiveDarkening = false;
     }
     toggleUpdateHandler("rainbow");
+});
+
+document.querySelector("#dark-btn").addEventListener('click', (e) => {
+    if (isAcvtiveDarkening) {
+        isAcvtiveDarkening = false;
+        selectedColor = document.querySelector("#color-picker-itself").value;
+    } else {
+        isAcvtiveDarkening = true;
+        isActiveRubber = false;
+        isActiveRainbow = false;
+    }
+    toggleUpdateHandler("darkening");
 });
 
 document.querySelector("#new-canvas-btn").addEventListener('click', (e) => {
@@ -57,25 +74,30 @@ document.querySelector("#new-canvas-btn").addEventListener('click', (e) => {
 function toggleUpdateHandler(priority) {
     const rubberToggle = document.querySelector("#toggle-status-rubber");
     const rainbowToggle = document.querySelector("#toggle-status-rainbow");
+    const darkToggle = document.querySelector("#toggle-status-dark");
     if (priority == "rainbow") {
         if (isActiveRainbow) {
             toggleOn(rainbowToggle);
-            if (isActiveRainbow && isActiveRubber) { 
-                toggleOff(rubberToggle);
-                isActiveRubber=false;
-            }
+            toggleOff(darkToggle);
+            toggleOff(rubberToggle);
         } else {
             toggleOff(rainbowToggle);
         }
-    } else {
+    } else if (priority == "rubber") {
         if (isActiveRubber) {
             toggleOn(rubberToggle);
-            if (isActiveRainbow && isActiveRubber) {
-                toggleOff(rainbowToggle); 
-                isActiveRainbow=false;
-            }
+            toggleOff(darkToggle);
+            toggleOff(rainbowToggle);
         } else {
             toggleOff(rubberToggle);
+        }
+    } else if (priority == "darkening"){
+        if (isAcvtiveDarkening) {
+            toggleOn(darkToggle);
+            toggleOff(rubberToggle);
+            toggleOff(rainbowToggle);
+        } else {
+            toggleOff(darkToggle);
         }
     }
 }
@@ -100,7 +122,6 @@ function gridCrafter(size, pxSize) {
         const newBoxContainer = document.createElement("div");
         newBoxContainer.classList.add(`grid-column`);
         grid.appendChild(newBoxContainer);
-        console.log(`Added ${i+1} grid column.`)
         for (let j = 0; j < size; j++) {
             const newBox = document.createElement("div");
             newBox.style.width = pxSize;
@@ -111,10 +132,8 @@ function gridCrafter(size, pxSize) {
                     else if (isRightPressed) newBox.style["background-color"] = selectedColor;
                 });
             newBoxContainer.appendChild(newBox);
-            console.log(`Added ${j+1} grid box.`)
         }
     }
-    console.log(`Gridbox creation finished`);
 }
 
 
