@@ -189,5 +189,5 @@ function displayPopup(message) {
 }
 
 //initial webside state
-let value = 10;
+let value = 100;
 gridCrafter(value, setPixelSize(value));
